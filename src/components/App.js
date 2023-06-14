@@ -18,7 +18,7 @@ function App() {
   const [isEditAvatarPopupOpen, setEditAvatarPopupOpen] = useState(false)
   const [isImagePopupOpen, setImagePopupOpen] = useState(false)
   const [selectedCard, setSelectedCard] = useState(null);
-  const [currentUser, setCurrentUser] = useState([]);
+  const [currentUser, setCurrentUser] = useState({});
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
@@ -58,6 +58,7 @@ function App() {
         );
         setCards(newCards);
       })
+      .catch((err) => console.log(err))
   }
 
   function handleCardLike(card) {
