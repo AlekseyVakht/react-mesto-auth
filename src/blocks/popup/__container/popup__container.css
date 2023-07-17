@@ -9,7 +9,6 @@
   border-radius: 10px;
   position: relative;
   cursor: initial;
-  justify-content: flex-end;
 }
 
 @media screen and (max-width: 1280px) {
