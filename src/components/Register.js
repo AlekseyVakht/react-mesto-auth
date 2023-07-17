@@ -23,20 +23,20 @@ function Register(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-      Auth.register(formValue.password, formValue.email)
+    Auth.register(formValue.password, formValue.email)
       .then((res) => {
-          props.handleInfoTooltipOpen({text:'Вы  успешно зарегистрированы!', img: registerSuccess});
-          navigate("/sign-in", { replace: true })
-          if (res.error) {
-            props.handleInfoTooltipOpen({text:'Что-то пошло не так! Попробуйте ещё раз.', img: registerFailed});
-            navigate("/sign-up", { replace: true })
-            formValue.password='';
-            formValue.email='';
-          }
+        props.handleInfoTooltipOpen({ text: 'Вы  успешно зарегистрированы!', img: registerSuccess });
+        navigate("/sign-in", { replace: true })
+        if (res.error) {
+          props.handleInfoTooltipOpen({ text: 'Что-то пошло не так! Попробуйте ещё раз.', img: registerFailed });
+          navigate("/sign-up", { replace: true })
+          formValue.password = '';
+          formValue.email = '';
+        }
       })
+      .catch((err) => console.log(err));
+  };
 
-        };
- 
   return (
     <div className="signup">
       <h2 className="signup__title">Регистрация</h2>

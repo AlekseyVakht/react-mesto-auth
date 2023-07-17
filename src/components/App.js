@@ -52,12 +52,14 @@ function App() {
     const jwt = localStorage.getItem('token');
     const mail = localStorage.getItem('email');
     if (jwt) {
-      Auth.checkToken(jwt).then((res) => {
+      Auth.checkToken(jwt)
+      .then((res) => {
         if (res) {
           handleLogin(mail);
           navigate("/", { replace: true });
         }
       })
+      .catch((err) => console.log(err));
     }
   };
 
