@@ -15,6 +15,7 @@ function Card({card, onCardClick, onCardLike, onCardDelete}) {
 
     function handleCardLike(){
         onCardLike(card);
+        dsadas
     }
 
     function handleCardDelete() {
